@@ -67,6 +67,7 @@ document.getElementById("upgrade1").addEventListener("touchstart", upgrade1);
 document.getElementById("upgrade2").addEventListener("click", upgrade2);
 document.getElementById("upgrade2").addEventListener("touchstart", upgrade2);
 
+// Add event listener for Auto-Baker button
 document.getElementById("autoBaker").addEventListener("click", buyAutoBaker);
 document.getElementById("autoBaker").addEventListener("touchstart", buyAutoBaker);
 
