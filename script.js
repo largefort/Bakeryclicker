@@ -39,6 +39,16 @@ function updateResources() {
     document.getElementById("realTimeProduction").textContent = realTimeProduction;
 }
 
+// Function to handle automatic bread production by auto-bakers
+function autoBakerProduction() {
+    bread += autoBakerCount * autoBakerProduction;
+    realTimeProduction += autoBakerCount * autoBakerProduction;
+    updateResources();
+}
+
+// Automatic production by auto-bakers
+setInterval(autoBakerProduction, 1000); // Update every second
+
 // Bake bread when clicked or tapped
 document.getElementById("bake").addEventListener("click", bakeBread);
 document.getElementById("bake").addEventListener("touchstart", bakeBread);
@@ -91,14 +101,6 @@ function buyAutoBaker() {
         saveGame(); // Save the game state after purchasing an auto-baker
     }
 }
-
-// Automatic production by auto-bakers
-setInterval(function() {
-    bread += autoBakerCount * autoBakerProduction;
-    realTimeProduction += autoBakerCount * autoBakerProduction; // Update real-time production
-    updateResources();
-    saveGame(); // Save the game state periodically (e.g., every minute)
-}, 60000); // Save the game every minute
 
 // Function to save the game data
 function saveGame() {
