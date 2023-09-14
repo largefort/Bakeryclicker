@@ -8,7 +8,7 @@
 <body>
     <div class="container">
         <h1>Bakery Clicker</h1>
-        <div id="bakery">
+        <div class="resources">
             <div class="resource">
                 <p>Bread</p>
                 <span id="bread">0</span>
@@ -17,17 +17,41 @@
                 <p>Cookies</p>
                 <span id="cookies">0</span>
             </div>
-            <button id="bake">Bake Bread</button>
+            <div class="resource">
+                <p>Production</p>
+                <span id="realTimeProduction">0</span> per second
+            </div>
         </div>
-        <div id="upgrades">
+        <button id="bake">Bake Bread</button>
+    </div>
+    <div class="tab-bar">
+        <button class="tab-button" id="homeTab">Home</button>
+        <button class="tab-button" id="upgradesTab">Upgrades</button>
+    </div>
+    <div class="tab-content">
+        <!-- Home Tab Content -->
+        <div id="homeContent">
+            <h2>Bakery Management</h2>
+            <button id="upgrade1">Upgrade 1 (10 Bread)</button>
+            <button id="upgrade2">Upgrade 2 (20 Bread)</button>
+            <button id="autoBaker">Auto-Baker (50 Bread)</button>
+        </div>
+
+        <!-- Upgrades Tab Content -->
+        <div id="upgradesContent" style="display: none;">
             <h2>Upgrades</h2>
-            <button id="upgrade1">Upgrade 1</button>
-            <button id="upgrade2">Upgrade 2</button>
-            <button id="autoBaker">Auto-Baker</button>
-        </div>
-        <div id="production">
-            <p>Real-time Production</p>
-            <span id="realTimeProduction">0</span>
+            <div class="upgrade">
+                <p>Upgrade 1 (Cost: 10 Bread)</p>
+                <button id="upgrade1">Buy</button>
+            </div>
+            <div class="upgrade">
+                <p>Upgrade 2 (Cost: 20 Bread)</p>
+                <button id="upgrade2">Buy</button>
+            </div>
+            <div class="upgrade">
+                <p>Auto-Baker (Cost: 50 Bread)</p>
+                <button id="autoBaker">Buy</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
