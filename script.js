@@ -71,36 +71,20 @@ document.getElementById("upgrade2").addEventListener("touchstart", upgrade2);
 document.getElementById("autoBaker").addEventListener("click", buyAutoBaker);
 document.getElementById("autoBaker").addEventListener("touchstart", buyAutoBaker);
 
-function upgrade1() {
-    if (bread >= 10) {
-        bread -= 10;
-        clickValue += 1;
-        realTimeProduction += 1; // Update real-time production
-        updateResources();
-        saveGame(); // Save the game state after an upgrade
-    }
+// Handle tab switching
+document.getElementById("homeTab").addEventListener("click", switchToHomeTab);
+document.getElementById("upgradesTab").addEventListener("click", switchToUpgradesTab);
+
+// Function to switch to the Home Tab
+function switchToHomeTab() {
+    document.getElementById("homeContent").style.display = "block";
+    document.getElementById("upgradesContent").style.display = "none";
 }
 
-function upgrade2() {
-    if (bread >= 20) {
-        bread -= 20;
-        clickValue += 2;
-        realTimeProduction += 2; // Update real-time production
-        updateResources();
-        saveGame(); // Save the game state after an upgrade
-    }
-}
-
-function buyAutoBaker() {
-    const cost = 50 * (autoBakerCount + 1); // Increase cost with each purchase
-    if (bread >= cost) {
-        bread -= cost;
-        autoBakerCount++;
-        autoBakerProduction++;
-        realTimeProduction += autoBakerProduction; // Update real-time production
-        updateResources();
-        saveGame(); // Save the game state after purchasing an auto-baker
-    }
+// Function to switch to the Upgrades Tab
+function switchToUpgradesTab() {
+    document.getElementById("homeContent").style.display = "none";
+    document.getElementById("upgradesContent").style.display = "block";
 }
 
 // Function to save the game data
